@@ -1,0 +1,3 @@
+C:/Users/Mohamed Khalil/Desktop/Courses/cs 2/Project/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir
+C:/Users/Mohamed Khalil/Desktop/Courses/cs 2/Project/untitled2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Mohamed Khalil/Desktop/Courses/cs 2/Project/untitled2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
