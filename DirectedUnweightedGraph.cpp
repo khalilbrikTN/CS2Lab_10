@@ -11,31 +11,28 @@ using namespace std;
 
 DirectedUnweightedGraph::DirectedUnweightedGraph(int count){
     numberOfVertices = count;
-    for(int i = 0; i<count;i++){
-        visited[i] = false;
-    };
-
-    for(int i = 0;i<numberOfVertices;i++){
+    for(int i = 0; i<numberOfVertices;i++){
         adjacencyList.push_back(vector<int>());
     };
-
 };
-void DirectedUnweightedGraph::DFS(int c) {
-    visited[c] = true;
+void DirectedUnweightedGraph::DFS(int vertex){
+    visited[vertex] = true;
 
-    for(int i = 0; i < adjacencyList[0].size(); i++){
-        int child = adjacencyList[0][i];
+    for(int i = 0; i < adjacencyList[vertex].size(); i++){
+        int child = adjacencyList[vertex][i];
         if(!visited[child]){
             DFS(child);
         }
     }
+}
 
 
-void DirectedUnweightedGraph::BFS(){
 
-
-    visited[0] = true;
-    q.push(0);
+void DirectedUnweightedGraph::BFS(int start){
+    for(int i = 0; i<numberOfVertices;i++){
+        visited[i] = false;
+    }
+    q.push(start);
 
     while (!q.empty()){
         int x = q.front();
@@ -49,16 +46,15 @@ void DirectedUnweightedGraph::BFS(){
             }
         }
     }
+
 }
 
-
-
-
 void DirectedUnweightedGraph::addEdge(Edge edge){
-    adjacencyList[edge.source].insert(adjacencyList.at(edge.source).begin(),edge.destination);
+    adjacencyList.at(edge.source).push_back(edge.destination);
 };
 void DirectedUnweightedGraph::viewGraph(){
 
+    cout<<"--Graph--"<<endl;
     for(int i = 0;i<adjacencyList.size();i++){
         cout<<i<<" --> ";
         for(int j = 0;j<adjacencyList.at(i).size();j++){

@@ -31,8 +31,8 @@ public:
     DirectedUnweightedGraph(int count);
     void addEdge(Edge edge);
     void viewGraph();
-    void BFS(); // Breadth First Search
-    void DFS(int c); // Depth First Search
+    void BFS(int start); // Breadth First Search
+    void DFS(int vertex); // Depth First Search
 };
 
 #endif //GRAPHS_DIRECTEDUNWEIGHTEDGRAPH_H
